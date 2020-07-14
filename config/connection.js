@@ -1,5 +1,9 @@
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
+var express = require("express");
+var exphbs = require("express-handlebars");
+var mysql = require("mysql");
+
+var app = express();
+
 var PORT = process.env.PORT || 8080;
 
 // Parse request body as JSON
