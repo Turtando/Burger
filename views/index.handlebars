@@ -1,0 +1,32 @@
+<h1>Turt's Good Burger Shack</h1>
+
+<h2>Burgers to be devoured</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Devoured burgers</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a burger of your choice!</h2>
+
+<form class="create-form">
+  <div class="form-group">
+    <label for="burger">Devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Not Devoured!
+  </div>
+    <button type="submit">Add Burger</button>
+</form>

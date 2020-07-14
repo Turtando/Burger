@@ -1,12 +1,12 @@
-app.get() {};
+// app.get() {};
 
-app.post() {};
+// app.post() {};
 
-app.post() {};
+// app.post() {};
 
-app.put() {};
+// app.put() {};
 
-app.delete() {};
+// app.delete() {};
 
 app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
