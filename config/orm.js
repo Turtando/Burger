@@ -1,11 +1,5 @@
 var connection = require("../config/connection.js");
 
-function insertOne() {}
-
-function updateOne() {}
-
-function selectAll() {}
-
 function printQuestionMarks(num) {
   var arr = [];
 
@@ -27,7 +21,8 @@ var orm = {
     });
   },
   create: function (table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table; WE
+    var queryString = "INSERT INTO " + table;
+    WE;
 
     queryString += " (";
     queryString += cols.toString();
@@ -36,10 +31,26 @@ var orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    
     console.log(queryString);
 
     connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+  update: function (table, objColVals, condition, cb) {
+    var queryString = "UPDATE " + table;
+
+    queryString += " SET ";
+    queryString += objToSql(objColVals);
+    queryString += " WHERE ";
+    queryString += condition;
+
+    console.log(queryString);
+    connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
       }
