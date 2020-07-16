@@ -40,7 +40,7 @@ Christopher Turton
 
 # Test
 
-run node server.js in terminal
+![](/public/assets/img/burger.gif)
 
 
 # Questions
