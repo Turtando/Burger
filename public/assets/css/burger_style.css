@@ -3,13 +3,7 @@
 *::after {
   box-sizing: border-box;
 }
-.label {
-  font-weight: bold;
-}
-.container {
-  border-radius: 5px;
-  padding: 50px;
-}
+
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -23,4 +17,9 @@
 
 .form-group {
   margin-bottom: 5px;
+}
+
+
+.label {
+  font-weight: bold;
 }

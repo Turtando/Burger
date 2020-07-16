@@ -1,38 +1,42 @@
-<header>
-  <div class="container">
-    <h1>Welcome to Turt's Good Burger Shack</h1>
-  </div>
-</header>
-<div class="wrapper">
-  <div class="row">
-    <div class="col-6">
-      <h2>Burgers to be devoured</h2>
+<body class="d-flex flex-column h-100">
+  <header>
+    <div class="container-fluid">
+      <h1>Welcome to Turt's Good Burger Shack</h1>
+    </div>
+  </header>
+  <div class="card pb-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="card col-md-6 p-4">
+          <h2>Burgers to be devoured</h2>
+          <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured=true}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card col-md-6 p-4">
+      <h2>Devoured burgers</h2>
       <ul>
         {{#each burgers}}
-        {{#unless devoured}}
-        {{> burgers/burger-block devoured=true}}
-        {{/unless}}
+        {{#if devoured}}
+        {{> burgers/burger-block devoured=false}}
+        {{/if}}
         {{/each}}
       </ul>
     </div>
-  </div>
 
-  <div class="col-6">
-    <h2>Devoured burgers</h2>
-    <ul>
-      {{#each burgers}}
-      {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-      {{/if}}
-      {{/each}}
-    </ul>
+    <h2 class="col-12 center">Add a burger of your choice!</h2>
+    <form class="create-form">
+      <div class="form-group center">
+        <label for="burg">Burger Type:</label>
+        <input type="text" id="burg" name="name">
+        <button type="submit" class="center offset-3">Add a Burger!</button>
+      </div>
+    </form>
   </div>
-</div>
-<h2 class="col-12 center">Add a burger of your choice!</h2>
-<form class="create-form">
-  <div class="form-group center">
-    <label for="burg">Burger Type:</label>
-    <input type="text" id="burg" name="name">
-    <button type="submit" class="center offset-3">Add a Burger!</button>
-  </div>
-</form>
+</body>
